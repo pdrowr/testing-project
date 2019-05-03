@@ -1,7 +1,6 @@
 .container-fluid
   .row
     .col-lg-12
-
       %h3.box-title Clientes (#{@clients.count})
 
       .box.slice-box
@@ -9,17 +8,13 @@
           %table.table
             %thead
               %tr
+                %th Nombre
+                %th Email
+                %th Empresa
+                %th Teléfono
+                %th Sector Económico
                 %th
-                  Nombre
-                %th
-                  Email
-                %th
-                  Empresa
-                %th
-                  Teléfono
-                %th
-                  Sector Económico
                 %th
                 %th
             %tbody
-              = render 'clients/partials/listing', clients: @clients
+              = render 'clients/partials/listing'

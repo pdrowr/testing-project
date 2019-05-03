@@ -35,3 +35,22 @@
                 %td
                   = link_to delete_client_path(@client), method: :delete, data: { confirm: '¿Estás seguro?' } do
                     %button.btn.btn-danger.btn-sm Eliminar
+
+      - unless @client.buys.blank?
+
+        %h3.box-title Compras
+        - @client.buys.each do |buy|
+          .box.slice-box
+            .box-body.no-padding
+              %table.table
+                %thead
+                  %tr
+                    %th Producto
+                    %th Categoría
+                    %th Precio
+                %tbody
+                  - buy.products.each do |product|
+                    %tr
+                      %td= product.name
+                      %td= product.category
+                      %td= product.price

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #root
+  #root route
   root 'front#index'
 
   get 'economic_sectors/index', to: 'economic_sectors#index', as: :listing_sectors
@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   get 'clients/:client_id/edit', to: 'clients#edit', as: :edit_client
   patch 'clients/:client_id/update', to: 'clients#update', as: :update_client
   delete 'clients/:client_id/delete', to: 'clients#delete', as: :delete_client
+
+  #sales routes
+  get 'sales/index', to: 'sales#index', as: :listing_sales
+  get 'sales/new', to: 'sales#new', as: :new_sale
+  post 'sales/create', to: 'sales#create', as: :create_sale
 end

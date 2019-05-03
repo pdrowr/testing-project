@@ -1,0 +1,27 @@
+%link{href: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css", rel: "stylesheet"}/
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"}
+
+.row
+  .col-md-12
+    .box.box-primary
+      .box-header.with-border
+        %h3.box-title Registrar Venta
+
+      = form_for @sale, url: create_sale_path, method: :post do |f|
+        .box-body
+          .form-group
+            = label(:client_id, 'Cliente')
+            = f.select :client_id, options_for_select(@clients), {}, { class: 'form-control' }
+          .form-group
+            = label(:product_ids, 'Productos')
+            = f.select :product_ids, options_for_select(@products), { include_blank: false }, { class: 'form-control select2', name: 'sale[product_ids][]' }
+          .box-footer
+            .pull-right
+              = f.submit 'Guardar', class: 'btn btn-primary'
+
+:javascript
+  $( document ).on('turbolinks:load', function() {
+    $('.select2').select2({
+      multiple: true
+    })
+  })

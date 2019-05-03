@@ -9,7 +9,7 @@
             %b T
             P
           %span.logo-lg
-            %b> Testing
+            %b Testing
             Project
 
         %nav.navbar.navbar-static-top
@@ -25,13 +25,13 @@
                   %i.fa.fa-angle-left.pull-right
               %ul.treeview-menu
                 %li
+                  = link_to new_sector_path do
+                    %i.fa.fa-circle-o
+                    Registrar
+                %li
                   = link_to listing_sectors_path do
                     %i.fa.fa-circle-o
                     Consultar
-                %li
-                  = link_to new_sector_path do
-                    %i.fa.fa-circle-o
-                    Crear
 
             %li.treeview
               %a{ href: '#' }
@@ -41,24 +41,30 @@
                   %i.fa.fa-angle-left.pull-right
               %ul.treeview-menu
                 %li
+                  = link_to new_client_path do
+                    %i.fa.fa-circle-o
+                    Registrar
+                %li
                   = link_to listing_clients_path do
                     %i.fa.fa-circle-o
                     Consultar
-                %li
-                  = link_to new_client_path do
-                    %i.fa.fa-circle-o
-                    Crear
 
-            -# %li
-            -#   %a{ href: '#' }
-            -#     %i.fa.fa-circle-o.text-aqua
-            -#     %span Information
+            %li.treeview
+              %a{ href: '#' }
+                %i.fa.fa-dashboard
+                %span Venta
+                %span.pull-right-container
+                  %i.fa.fa-angle-left.pull-right
+              %ul.treeview-menu
+                %li
+                  = link_to listing_sales_path do
+                    %i.fa.fa-circle-o
+                    Consultar
+                %li
+                  = link_to new_sale_path do
+                    %i.fa.fa-circle-o
+                    Registrar
 
       .content-wrapper
         %section.content
           = yield
-
-:javascript
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })

@@ -20,12 +20,9 @@ class ClientsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-    @client = Client.first
-  end
+  def edit; end
 
   def update
     if @client.update(client_params)

@@ -1,0 +1,23 @@
+.container-fluid
+  .row
+    .col-lg-12
+      %h3.box-title Ventas (#{@sales.count})
+
+      - @sales.each do |sale|
+        .box.slice-box
+          %h3.box-title
+            Cliente:
+            = sale.client.name
+          .box-body.no-padding
+            %table.table
+              %thead
+                %tr
+                  %th Producto
+                  %th Categoría
+                  %th Precio
+              %tbody
+                - sale.products.each do |product|
+                  %tr
+                    %td= product.name
+                    %td= product.category
+                    %td= product.price
