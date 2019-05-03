@@ -41,6 +41,9 @@
         %h3.box-title Compras
         - @client.buys.each do |buy|
           .box.slice-box
+            %h4.box-title
+              Fecha
+              = buy.parsed_created_at
             .box-body.no-padding
               %table.table
                 %thead
