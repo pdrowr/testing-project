@@ -1,0 +1,37 @@
+.container-fluid
+  .row
+    .col-lg-12
+
+      %h3.box-title Cliente
+
+      .box.slice-box
+        .box-body.no-padding
+          %table.table
+            %thead
+              %tr
+                %th
+                  Nombre
+                %th
+                  Email
+                %th
+                  Empresa
+                %th
+                  Teléfono
+                %th
+                  Sector Económico
+                %th
+            %tbody
+              %tr
+                %td
+                  = @client.name
+                %td
+                  = @client.email
+                %td
+                  = @client.business
+                %td
+                  = @client.phone
+                %td
+                  AASD
+                %td
+                  = link_to delete_client_path(@client), method: :delete, data: { confirm: '¿Estás seguro?' } do
+                    %button.btn.btn-danger.btn-sm Eliminar

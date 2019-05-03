@@ -1,0 +1,7 @@
+- sectors.each do |sector|
+  %tr
+    %td
+      = sector.name
+    %td
+      = link_to delete_sector_path(sector), method: :delete, data: { confirm: '¿Estás seguro?' } do
+        %button.btn.btn-danger.btn-sm Eliminar

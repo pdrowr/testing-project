@@ -1,0 +1,8 @@
+= form_for @sector, url: create_sector_path, method: :post do |f|
+  .box-body
+    .form-group
+      = label(:name, 'Nombre')
+      = f.text_field :name, class: 'form-control', placeholder: 'Ingrese el nombre del sector económico'
+    .box-footer
+      .pull-right
+        = f.submit action_name.eql?('new') ? 'Guardar' : 'Editar', class: 'btn btn-primary'

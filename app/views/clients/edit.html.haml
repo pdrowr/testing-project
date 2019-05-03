@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+    .box.box-primary
+      .box-header.with-border
+        %h3.box-title Editar Cliente
+
+      = form_for @client, url: update_client_path, method: :patch do |f|
+        .box-body
+          .form-group
+            = label(:name, 'Nombre')
+            = f.text_field :name, class: 'form-control', placeholder: 'Ingrese el nombre'
+          .form-group
+            = label(:business, 'Nombre Empresa')
+            = f.text_field :business, class: 'form-control', placeholder: 'Ingrese el nombre de la Empresa'
+          .form-group
+            = label(:email, 'Correo Electrónico')
+            = f.email_field :email, class: 'form-control', placeholder: 'Ingrese el correo electrónico'
+          .form-group
+            = label(:phone, 'Teléfono')
+            = f.number_field :phone, class: 'form-control', placeholder: 'Teléfono'
+          .form-group
+            = label(:economic_sector_id, 'Sector Económico')
+            = f.select :economic_sector_id, options_for_select(@economic_sectors), {}, { class: 'form-control'}
+          .box-footer
+            .pull-right
+              = f.submit action_name.eql?('new') ? 'Guardar' : 'Editar', class: 'btn btn-primary'

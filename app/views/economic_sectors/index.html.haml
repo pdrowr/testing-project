@@ -1,0 +1,16 @@
+.container-fluid
+  .row
+    .col-lg-12
+
+      %h3.box-title Sectores Económicos (#{@sectors.count})
+
+      .box.slice-box
+        .box-body.no-padding
+          %table.table
+            %thead
+              %tr
+                %th
+                  Nombre
+                %th
+            %tbody
+              = render 'economic_sectors/partials/listing', sectors: @sectors
